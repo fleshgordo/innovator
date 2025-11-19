@@ -1,4 +1,4 @@
-# Innovator App — hands-on guide (macOS fresh install)
+# Innovator App — hands-on guide
 
 This guide walks you from a fresh macOS + VS Code setup to a running Android app built with Capacitor, plain HTML/CSS/JS, and a tiny router. No frameworks.
 
@@ -78,8 +78,8 @@ Notes
 Either clone this repo or download/unzip.
 
 ```bash
-git clone <your_repository_url>
-cd innovater_test
+git clone git@github.com:fleshgordo/innovator.git
+cd innovator
 ```
 
 Install Node dependencies and Capacitor platforms/plugins:
@@ -117,23 +117,6 @@ In Android Studio:
 - Select device/emulator and press Run ▶️
 - If build fails with Java errors, verify Gradle JDK is set to 21 (Preferences > Gradle)
 
-## 5.1) Export the slide deck to PPTX / PDF
-
-We added a Markdown slide deck at `docs/slides/slides.md` and npm scripts to export:
-
-```bash
-# Install the slide tool (once)
-npm install
-
-# Build PPTX
-npm run slides:build:pptx
-
-# Build PDF
-npm run slides:build:pdf
-```
-
-Output files will be written to `docs/slides/`.
-
 ## 6) App walkthrough
 - Start screen renders from HTML `<template>`s
 - Buttons:
@@ -161,8 +144,6 @@ Output files will be written to `docs/slides/`.
 ## 8) Extend the app (exercises)
 1. Add a new route via `<template>` + `routes` map in `js/router.js`
 2. Wire a new button to use another Capacitor plugin (e.g., Clipboard, Device)
-3. Add a theme toggle stored in localStorage
-4. Bonus: add a service worker for offline start
 
 ## 9) Clean remove / reset (optional)
 ```bash
