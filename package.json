@@ -1,0 +1,23 @@
+{
+  "name": "innovater_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "slides:build:pptx": "marp --allow-local-files --pptx docs/slides/slides.md -o docs/slides/Innovator-Capacitor-Workshop.pptx",
+    "slides:build:pdf": "marp --allow-local-files docs/slides/slides.md -o docs/slides/Innovator-Capacitor-Workshop.pdf"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
+    "@capacitor/geolocation": "^7.1.5",
+    "@capacitor/haptics": "^7.0.2"
+  }
+}

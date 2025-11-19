@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" style="background:#0f1115">
+  <defs>
+    <style>
+      .box{fill:#1b1f24;stroke:#2d343c;stroke-width:2;rx:10;ry:10}
+      .txt{font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; fill:#f5f7fa; font-size:16px}
+      .muted{fill:#9aa4b1}
+      .arrow{stroke:#5d95ff;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#5d95ff"/>
+    </marker>
+  </defs>
+
+  <!-- Web assets -->
+  <rect x="60" y="80" width="280" height="180" class="box"/>
+  <text x="80" y="110" class="txt">Web (in WebView)</text>
+  <text x="80" y="140" class="txt muted">HTML templates</text>
+  <text x="80" y="165" class="txt muted">CSS (dark theme)</text>
+  <text x="80" y="190" class="txt muted">JS: router, storage</text>
+
+  <!-- Capacitor bridge -->
+  <rect x="360" y="100" width="240" height="140" class="box"/>
+  <text x="380" y="130" class="txt">Capacitor Bridge</text>
+  <text x="380" y="160" class="txt muted">Plugin API</text>
+
+  <!-- Native shell -->
+  <rect x="640" y="80" width="260" height="180" class="box"/>
+  <text x="660" y="110" class="txt">Native shell (Android)</text>
+  <text x="660" y="140" class="txt muted">WebView + Plugins</text>
+
+  <!-- Plugins -->
+  <rect x="360" y="300" width="240" height="160" class="box"/>
+  <text x="380" y="330" class="txt">Plugins</text>
+  <text x="380" y="360" class="txt muted">Geolocation</text>
+  <text x="380" y="385" class="txt muted">Haptics</text>
+
+  <!-- OS -->
+  <rect x="640" y="300" width="260" height="160" class="box"/>
+  <text x="660" y="330" class="txt">OS services</text>
+  <text x="660" y="360" class="txt muted">GPS / Sensors</text>
+  <text x="660" y="385" class="txt muted">Haptic engine</text>
+
+  <!-- Arrows -->
+  <path d="M340,170 L360,170" class="arrow"/>
+  <path d="M600,170 L640,170" class="arrow"/>
+  <path d="M480,240 L480,300" class="arrow"/>
+  <path d="M600,380 L640,380" class="arrow"/>
+</svg>

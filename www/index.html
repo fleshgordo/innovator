@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Innovator App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="app-title">Innovator</h1>
+    </header>
+    <main id="app" class="app-main" data-screen="start">
+      <!-- Content will be injected by router/app logic -->
+      <noscript>
+        <div class="screen">
+          <h2>Start</h2>
+          <p>Please enable JavaScript to use this app.</p>
+        </div>
+      </noscript>
+    </main>
+    <footer class="app-footer" role="contentinfo">
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-btn" data-route="#start" aria-label="Go to start">
+          Start
+        </button>
+        <button class="nav-btn" data-route="#about" aria-label="Go to about">
+          About
+        </button>
+        <button
+          class="nav-btn"
+          data-route="#settings"
+          aria-label="Go to settings"
+        >
+          Settings
+        </button>
+      </nav>
+    </footer>
+
+    <!-- Route templates: HTML separated from JS logic -->
+    <template id="tpl-start">
+      <div class="screen" id="screen-start">
+        <h2>Start</h2>
+        <p>
+          Welcome<span id="user-greeting"></span>. This is the minimal dark
+          start screen.
+        </p>
+        <div class="user-prefs" id="user-prefs">
+          <!-- User preferences will be displayed here -->
+        </div>
+        <div class="actions">
+          <button class="primary-btn" id="demo-action">Do Action</button>
+          <button class="primary-btn" id="geo-action">Get Location</button>
+        </div>
+        <div id="location-display" class="location-info hidden">
+          <!-- GPS coordinates will be displayed here -->
+        </div>
+      </div>
+    </template>
+
+    <template id="tpl-about">
+      <div class="screen" id="screen-about">
+        <h2>About</h2>
+        <p>
+          This app uses a tiny custom router. No external frameworks. Hash
+          navigation keeps things simple.
+        </p>
+        <p>
+          HTML lives in <code>&lt;template&gt;</code> tags in
+          <code>index.html</code>, keeping JS clean.
+        </p>
+      </div>
+    </template>
+
+    <template id="tpl-settings">
+      <div class="screen" id="screen-settings">
+        <h2>Settings</h2>
+        <p>Your preferences are stored locally in your browser.</p>
+        <form id="settings-form" class="settings-form">
+          <div class="form-group">
+            <label for="user-name">Your Name</label>
+            <input
+              type="text"
+              id="user-name"
+              name="userName"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="user-theme">Theme Preference</label>
+            <select id="user-theme" name="theme">
+              <option value="dark">Dark</option>
+              <option value="darker">Darker</option>
+              <option value="midnight">Midnight</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="notifications" name="notifications" />
+              Enable Notifications
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Save Settings</button>
+            <button type="button" id="clear-settings" class="secondary-btn">
+              Clear All
+            </button>
+          </div>
+        </form>
+        <div id="save-feedback" class="feedback hidden"></div>
+      </div>
+    </template>
+
+    <script src="js/storage.js"></script>
+    <script src="js/capacitor-bridge.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
