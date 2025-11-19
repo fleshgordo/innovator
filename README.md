@@ -14,6 +14,10 @@ This guide walks you from a fresh macOS + VS Code setup to a running Android app
 - VS Code installed
 - Copilot
 
+Open www folder in Code Editor and start liveserver. You should be able to see the website in a web-browser through URL http://127.0.0.1:5555/www/ or similar
+
+If you want to build a package for Android then continue steps below.
+
 ## 1) Install developer tools
 Run these in Terminal (Applications > Utilities > Terminal) using zsh.
 
@@ -53,6 +57,11 @@ brew install openjdk@21
   echo 'export JAVA_HOME="$((/usr/libexec/java_home -v 21) 2>/dev/null || echo $(/usr/libexec/java_home)))"'
   echo 'export PATH="$JAVA_HOME/bin:$PATH"'
 } >> ~/.zshrc
+
+# or run
+# export JAVA_HOME=/usr/local/opt/openjdk@21 
+# for local java 
+
 source ~/.zshrc
 java -version
 
@@ -109,6 +118,9 @@ source ~/.nvm/nvm.sh && nvm use 22
 # Sync web → native android
 npx cap sync android
 
+# Run the app
+npx cap run android
+
 # Open Android project
 npx cap open android
 ```
@@ -141,11 +153,7 @@ In Android Studio:
 - Emulator performance
   - Enable hardware acceleration (Hypervisor Framework) in macOS settings if prompted
 
-## 8) Extend the app (exercises)
-1. Add a new route via `<template>` + `routes` map in `js/router.js`
-2. Wire a new button to use another Capacitor plugin (e.g., Clipboard, Device)
-
-## 9) Clean remove / reset (optional)
+## 8) Clean remove / reset (optional)
 ```bash
 # Remove Android build outputs
 (cd android && ./gradlew clean)
